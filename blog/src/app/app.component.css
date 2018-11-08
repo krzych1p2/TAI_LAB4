@@ -1,0 +1,31 @@
+body
+{
+  background-color: #FFCCCC;
+}
+
+ul li{
+  display: inline;
+  color: white;
+  background: black;
+}
+
+.container{
+  padding-left: 2px;
+}
+.navbar{
+  width: 50%;
+
+  margin: 0;
+
+}
+.box{
+  text-align: center;
+}
+.nav-item{
+
+  height: 40px;
+
+}
+.strona{
+  font-size: 20px;
+}
