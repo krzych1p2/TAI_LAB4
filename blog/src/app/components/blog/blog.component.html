@@ -1,0 +1,3 @@
+<div *ngFor="let article of articles$">
+<app-blog-item id="{{articles$.indexOf(article)}}" [article]="article"></app-blog-item>
+</div>

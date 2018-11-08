@@ -1,0 +1,3 @@
+<app-blog-item-image [image]="article.image"></app-blog-item-image>
+<app-blog-item-text [text]="article.text | summary:90"></app-blog-item-text>
+<a routerLink="/blog/details/{{id}}">Read more</a>
