@@ -1,3 +1,4 @@
-<app-blog-item-image [image]="article.image"></app-blog-item-image>
-<app-blog-item-text [text]="article.text | summary:90"></app-blog-item-text>
-<a routerLink="/blog/details/{{id}}">Read more</a>
+<h4>{{article.title}}</h4>
+<app-blog-item-text [text]="article.text | summary:90"></app-blog-item-text>	<app-blog-item-image [image]="image"></app-blog-item-image>
+<a routerLink="/blog/details/{{id}}">Read more</a>	<app-blog-item-text [text]="article.body | summary:90"></app-blog-item-text>
+<a routerLink="/blog/details/{{article.id}}">Read more</a>

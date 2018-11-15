@@ -1,2 +1,37 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <form class="custom-form">	  <form class="custom-form" [formGroup]="profileForm" (submit)="onSubmit()">
+    <div class="form-group">	    <div class="form-group">
+      <label for="name">Imię</label>	      <label for="name">Imię</label>
+      <input type="text" class="form-control" id="name" placeholder="Imię">	      <input type="text" class="form-control" id="name" placeholder="Imię" formControlName="firstName">
+      <div *ngIf="profileForm.get('firstName').touched && profileForm.get('firstName').invalid" class="alert alert-danger" required=""> Musisz podać imię</div>
+      <label for="surname">Nazwisko</label>	      <label for="surname">Nazwisko</label>
+      <input type="text" class="form-control" id="surname" placeholder="Nazwisko">	      <input type="text" class="form-control" id="surname" placeholder="Nazwisko" formControlName="lastName">
+      <div *ngIf="profileForm.get('lastName').touched && profileForm.get('lastName').invalid" class="alert alert-danger" required=""> Musisz podać nazwisko</div>
+      <label for="email">E-mail</label>	      <label for="email">E-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="E-mail">	      <input type="email" class="form-control" id="email" placeholder="E-mail" formControlName="email">
+      <div *ngIf="profileForm.get('email').touched && profileForm.get('email').invalid" class="alert alert-danger" required=""> Email jest niepoprawny</div>
+      <label for="gender">Płeć</label>	      <label for="gender">Płeć</label>
+      <fieldset id="gender">	      <fieldset id="gender">
+        <input type="radio" id="male" value="Mężczyzna" name="gender" checked required>	        <input type="radio" id="male" value="Mężczyzna" name="gender" checked required  formControlName="gender">
+        <label for="male">Mężczyzna</label>	        <label for="male">Mężczyzna</label>
+        <input type="radio" id="female" value="Kobieta" name="gender" required>	        <input type="radio" id="female" value="Kobieta" name="gender" required  formControlName="gender">
+        <label for="male">Kobieta</label>	        <label for="male">Kobieta</label>
+      </fieldset>	      </fieldset>
+      <div *ngIf="profileForm.get('gender').touched && profileForm.get('gender').invalid" class="alert alert-danger" required=""> Musisz wybrać płeć</div>
+      <label for="age">Wiek</label>	      <label for="age">Wiek</label>
+      <input type="number" class="form-control" id="age" placeholder="Wiek">	      <input type="number" class="form-control" id="age" placeholder="Wiek" formControlName="age">
+      <div *ngIf="profileForm.get('age').touched && profileForm.get('age').invalid" class="alert alert-danger" required=""> Musisz podać wiek</div>
+      <label for="marital">Stan cywilny</label>	      <label for="marital">Stan cywilny</label>
+      <select id="marital" class="form-control">	      <select id="marital" class="form-control" formControlName="marital">
+        <option value="single">Kawaler/Panna</option>	        <option value="single">Kawaler/Panna</option>
+        <option value="married">Żonaty/Mężatka</option>	        <option value="married">Żonaty/Mężatka</option>
+        <option value="widowed">Wdowiec/Wdowa</option>	        <option value="widowed">Wdowiec/Wdowa</option>
+      </select>	      </select>
+      <label for="description">Wiadomość</label>	      <label for="description">Wiadomość</label>
+      <textarea class="form-control" rows="3" placeholder="Opis" id="description" required></textarea>	      <textarea class="form-control" rows="3" placeholder="Opis" id="description" required formControlName="description"></textarea>
+      <div *ngIf="profileForm.get('description').touched && profileForm.get('description').invalid" class="alert alert-danger" required=""> Musisz podać treść wiadomości</div>
+    </div>	    </div>
+    <button type="reset" class="btn btn-primary">Wyczyść</button>	    <button type="reset" class="btn btn-primary">Wyczyść</button>
+    <button type="submit" class="btn btn-primary">Wyślij</button>	    <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid">Wyślij</button>
+  </form>	  </form>
+</div>	</div>

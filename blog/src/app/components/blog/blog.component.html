@@ -1,3 +1,4 @@
-<div *ngFor="let article of articles$">
-<app-blog-item id="{{articles$.indexOf(article)}}" [article]="article"></app-blog-item>
-</div>
+<input type="text" id="title" [(ngModel)]="title" placeholder="Wyszukaj post po tytule">
+<app-blog-item id="{{articles$.indexOf(article)}}" [article]="article"></app-blog-item>	<div *ngFor="let article of articles$ | filter:title">
+  <app-blog-item image="images$.find(image=>image.id===article.id)" [article]="article"></app-blog-item>
+</div>	</div>
